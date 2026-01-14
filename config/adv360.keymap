@@ -3,11 +3,6 @@
  *
  * SPDX-License-Identifier: MIT
  */
-/* THIS FILE WAS GENERATED!
- *
- * This file was generated automatically. You may or may not want to
- * edit it directly.
- */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>
@@ -32,166 +27,30 @@
         };
     };
 
-    macros {
-        kvm_1: kvm_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 50>,
-                <&macro_tap_time 50>,
-                <&kp SLCK &kp SCROLLLOCK &kp NUMBER_1>,
-                <&macro_wait_time 500>,
-                <&to 3>;
-
-            label = "KVM_1";
-        };
-
-        kvm_2: kvm_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 50>,
-                <&macro_tap_time 50>,
-                <&kp SLCK &kp SCROLLLOCK &kp NUMBER_2>,
-                <&macro_wait_time 500>,
-                <&to 14>;
-
-            label = "KVM_2";
-        };
-
-        kvm_3: kvm_3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 50>,
-                <&macro_tap_time 50>,
-                <&kp SLCK &kp SCROLLLOCK &kp NUMBER_3>,
-                <&macro_wait_time 500>,
-                <&to 14>;
-
-            label = "KVM_3";
-        };
-
-        kvm_4: kvm_4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 50>,
-                <&macro_tap_time 50>,
-                <&kp SLCK &kp SCROLLLOCK &kp NUMBER_4>,
-                <&macro_wait_time 500>,
-                <&to 3>;
-
-            label = "KVM_4";
-        };
-
-        listary: listary {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(LC(L)))>;
-            label = "LISTARY";
-        };
-
-        copyq: copyq {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(LC(Q)))>;
-            label = "COPYQ";
-        };
-
-        powerrun: powerrun {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(LC(P)))>;
-            label = "POWERRUN";
-        };
-
-        kvm_reset: kvm_reset {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_wait_time 50>,
-                <&macro_tap_time 50>,
-                <&kp KP_NUMLOCK &kp KP_NUMLOCK>;
-
-            label = "KVM_RESET";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
-        MacDefault {
+        base {
             bindings = <
-&kp EQUAL  &kvm_1        &kvm_2      &kvm_3       &kvm_4       &kvm_reset  &tog 1                                                                         &mo 6             &kp N6  &kp N7        &kp N8            &kp N9      &kp N0          &kp MINUS
-&kp TAB    &kp Q         &kp W       &kp E        &kp R        &kp T       &to 3                                                                          &to 6             &kp Y   &kp U         &kp I             &kp O       &kp P           &kp BSLH
-&kp ESC    &mt LEFT_WIN A &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G       &to 14        &kp SCROLLLOCK  &kp INS            &kp HOME       &kp END        &to 5             &kp H   &mt RSHIFT J  &mt RCTRL K       &mt RALT L  &mt RIGHT_WIN SEMI &kp SQT
-&kp LSHFT  &lt 7 Z       &kp X       &kp C        &kp V        &kp B                                     &kp PAGE_DOWN      &kp PG_UP                                       &kp N   &kp M         &kp COMMA         &kp PERIOD  &kp FSLH        &kp RSHFT
-&tog 3     &kp GRAVE     &kp CAPS    &kp LEFT     &kp RIGHT                &lt 26 SPACE  &lt 27 TAB      &lt 28 ESC         &lt 29 DELETE  &lt 25 RETURN  &lt 22 BACKSPACE          &kp UP        &kp DOWN          &kp LBKT    &kp RBKT        &tog 3
+&trans     &trans          &trans          &trans           &trans           &trans  &trans                                          &trans  &trans  &trans           &trans           &trans          &trans          &trans
+&trans     &kp Q           &kp W           &kp E            &kp R            &kp T   &trans                                          &trans  &kp Y   &kp U            &kp I            &kp O           &kp P           &trans
+&trans     &hm LEFT_WIN A  &hm LEFT_ALT S  &hm LEFT_CTRL D  &hm LEFT_SHIFT F &kp G   &trans  &trans  &trans      &trans  &trans      &trans  &kp H   &hm RIGHT_SHIFT J &hm RIGHT_CTRL K &hm RIGHT_ALT L &hm RIGHT_WIN SEMI &trans
+&trans     &kp Z           &kp X           &kp C            &kp V            &kp B                   &trans      &trans                      &kp N   &kp M            &kp COMMA        &kp PERIOD      &kp FSLH        &trans
+&to 7      &trans          &trans          &trans           &trans                   &lt 3 ESC &lt 1 SPACE &lt 2 TAB &lt 5 ENTER &lt 4 BACKSPACE &lt 6 DELETE &trans &trans &trans &trans &to 7
             >;
         };
 
-        layer_keypad {
+        nav {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                      &mo 6      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &bootloader                                                 &trans     &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &trans       &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &trans     &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                           &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&to 3      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC     &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
+&trans  &trans        &trans        &trans            &trans          &trans  &trans                                      &trans  &trans    &trans    &trans    &trans     &trans     &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans                                      &trans  &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X)  &kp LC(Z)  &trans
+&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp CAPS   &trans
+&trans  &trans        &trans        &trans            &trans          &trans                  &trans      &trans                  &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp INS    &trans
+&trans  &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &kp ENTER &kp BACKSPACE &kp DELETE &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_fn {
-            bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 6   &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &to 3                                       &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
-            >;
-        };
-
-        layer_mod {
-            bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
-            >;
-        };
-
-        layer_qwerty {
-            bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                   &mo 6      &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &to 3                                                    &trans     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &trans    &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &trans     &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&tog 2     &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
-            >;
-        };
-
-        layer_US {
-            bindings = <
-&kp EQUAL  &macro_kvm1  &macro_kvm2  &macro_kvm3  &macro_kvm4  &kp N5  &tog 1                                                                 &mo 6            &kp N6  &kp N7        &kp N8       &kp N9      &kp N0            &kp U
-&kp TAB    &kp Q        &kp W        &kp F        &kp P        &kp B   &to 3                                                                  &trans           &kp J   &kp L         &kp U        &kp Y       &kp SINGLE_QUOTE  &kp BSLH
-&kp ESC    &mt LWIN A   &mt LALT R   &mt LCTRL S  &mt LSHFT T  &kp G   &trans        &kp LCTRL   &kp LALT        &kp LGUI       &kp RCTRL     &trans           &kp M   &mt RSHIFT N  &mt RCTRL E  &mt RALT I  &mt RWIN O        &kp SQT
-&kp LSHFT  &lt 7 Z      &kp X        &kp C        &kp D        &kp V                             &kp HOME        &kp PG_UP                                     &kp K   &kp H         &kp COMMA    &kp PERIOD  &lt 7 SLASH       &kp RSHFT
-&tog 2     &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT            &lt 10 SPACE  &lt 11 TAB  &lt 12 ESC      &lt 13 DELETE  &lt 9 RETURN  &lt 6 BACKSPACE          &kp UP        &kp DOWN     &kp LBKT    &kp RBKT          &tog 2
-            >;
-        };
-
-        layer_Nav_Layer {
-            bindings = <
-&trans  &macro_kvm1    &macro_kvm2     &macro_kvm3     &macro_kvm4      &trans      &trans                                          &trans  &trans        &trans          &trans          &trans        &trans           &trans
-&trans  &kp PG_UP      &kp HOME        &kp UP_ARROW    &kp END          &kp INSERT  &trans                                          &trans  &kp LC(Y)     &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(Z)        &trans
-&trans  &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &trans     &trans   &trans      &trans  &trans  &trans  &kp CAPSLOCK  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &kp LC(Z)      &kp LC(X)       &kp LC(C)       &kp LC(V)        &kp LC(Y)                       &trans      &trans                  &kp INSERT    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans
-&trans  &trans         &trans          &trans          &trans                       &kp SPACE  &kp TAB  &trans      &trans  &trans  &trans                &trans          &trans          &trans        &trans           &trans
-            >;
-        };
-
-        layer_Mouse_Layer {
+        mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -201,223 +60,53 @@
             >;
         };
 
-        layer_Button_Layer {
+        media {
             bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans     &trans                                      &trans  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans                                      &trans  &kp LC(Y)  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)                  &trans      &trans                  &kp LC(Y)  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans             &trans     &trans     &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans        &trans        &trans      &trans       &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &trans
+&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &bl BL_TOG &bl BL_DEC &bl BL_INC &trans       &trans       &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &kp C_STOP &kp C_PP &kp C_MUTE &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_Coding_Layer {
+        num {
             bindings = <
-&trans  &trans         &trans             &trans             &trans                 &trans            &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp AT         &kp SINGLE_QUOTE   &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp COLON         &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SLASH      &kp LEFT_BRACKET   &kp LEFT_BRACE     &kp LEFT_PARENTHESIS   &kp LESS_THAN     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp BACKSLASH  &kp RIGHT_BRACKET  &kp RIGHT_BRACE    &kp RIGHT_PARENTHESIS  &kp GREATER_THAN                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans             &trans             &trans                                   &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans                                        &trans  &trans     &trans   &trans   &trans   &trans        &trans
+&trans  &kp LBKT      &kp N7        &kp N8            &kp N9          &kp RBKT &trans                                       &trans  &trans     &trans   &trans   &trans   &trans        &trans
+&trans  &kp SEMI      &kp N4        &kp N5            &kp N6          &kp EQUAL &trans  &trans  &trans      &trans  &trans  &trans  &trans     &kp RIGHT_SHIFT &kp RIGHT_CTRL &kp RIGHT_ALT &kp RIGHT_WIN &trans
+&trans  &kp GRAVE     &kp N1        &kp N2            &kp N3          &kp BSLH                  &trans      &trans                  &trans     &trans   &trans   &trans   &trans        &trans
+&trans  &trans        &trans        &trans            &trans                  &kp PERIOD &kp N0 &kp MINUS &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_Num_Layer {
+        sym {
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans  &trans                                                       &trans      &trans     &trans        &trans        &trans        &trans         &trans
-&trans  &none         &none         &none             &none           &none   &trans                                                       &trans      &kp PLUS   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK   &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans      &trans               &trans      &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH      &trans
-&trans  &none         &none         &none             &none           &none                   &trans      &trans                                       &kp EQUAL  &kp N1        &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH  &trans
-&trans  &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &kp PERIOD  &mt RETURN NUMBER_0  &kp KP_DOT             &trans        &trans        &trans        &trans         &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans                                      &trans  &trans  &trans            &trans            &trans         &trans         &trans
+&trans  &kp LBRC      &kp AMPS      &kp ASTRK         &kp LPAR        &kp RBRC &trans                                     &trans  &trans  &trans            &trans            &trans         &trans         &trans
+&trans  &kp COLON     &kp DLLR      &kp PRCNT         &kp CARET       &kp PLUS &trans  &trans  &trans      &trans  &trans &trans  &trans  &kp RIGHT_SHIFT   &kp RIGHT_CTRL    &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
+&trans  &kp TILDE     &kp EXCL      &kp AT            &kp HASH        &kp PIPE                 &trans      &trans                 &trans  &trans            &trans            &trans         &trans         &trans
+&trans  &trans        &trans        &trans            &trans                  &kp LPAR &kp RPAR &kp UNDER &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_Symbols {
+        fun {
             bindings = <
-&trans  &trans     &trans           &trans       &trans        &trans          &trans                                          &trans         &trans     &trans      &trans     &trans          &trans           &trans
-&trans  &kp GRAVE  &kp AMPERSAND    &kp ASTRK    &macro_pound  &kp UNDERSCORE  &trans                                          &trans         &kp GRAVE  &kp AMPS    &kp STAR   &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-&trans  &kp COLON  &kp DOLLAR       &kp PERCENT  &kp CARET     &kp PLUS        &trans  &trans  &trans      &trans  &trans      &trans         &kp COLON  &kp DOLLAR  &kp PRCNT  &kp CARET       &kp PLUS         &trans
-&trans  &kp TILDE  &kp EXCLAMATION  &kp AT       &kp HASH      &kp PIPE                        &trans      &trans                             &kp TILDE  &kp EXCL    &kp AT     &kp HASH        &kp PIPE         &trans
-&trans  &trans     &trans           &trans       &trans                        &trans  &trans  &trans      &trans  &kp RETURN  &kp BACKSPACE             &trans      &trans     &trans          &trans           &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans                                      &trans  &trans       &trans  &trans  &trans  &trans   &trans
+&trans  &kp F12       &kp F7        &kp F8            &kp F9          &kp PSCRN &trans                                    &trans  &trans       &trans  &trans  &trans  &trans   &trans
+&trans  &kp F11       &kp F4        &kp F5            &kp F6          &kp SLCK &trans  &trans  &trans      &trans  &trans &trans  &trans       &kp RIGHT_SHIFT &kp RIGHT_CTRL &kp RIGHT_ALT &kp RIGHT_WIN &trans
+&trans  &kp F10       &kp F1        &kp F2            &kp F3          &kp PAUSE_BREAK          &trans      &trans                 &trans       &trans  &trans  &trans  &trans   &trans
+&trans  &trans        &trans        &trans            &trans                  &kp K_APP &kp SPACE &kp TAB &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
-        layer_Funtions {
+        sys {
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans  &trans                                              &trans           &trans           &trans  &trans  &trans  &trans   &trans
-&trans  &none         &none         &none             &none           &none   &trans                                              &trans           &kp PRINTSCREEN  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans  &trans          &trans           &kp SLCK         &kp F4  &kt F5  &kp F6  &kp F11  &trans
-&trans  &none         &none         &none             &none           &none                   &trans      &trans                                   &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-&trans  &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE                   &trans  &trans  &trans  &trans   &trans
-            >;
-        };
-
-        layer_macros {
-            bindings = <
-&trans  &macro_kvm1      &macro_kvm2      &macro_kvm3        &macro_kvm4     &trans  &trans                                      &trans  &trans  &trans          &trans        &trans           &trans           &trans
-&trans  &trans           &trans           &trans             &trans          &trans  &trans                                      &trans  &trans  &trans          &trans        &trans           &trans           &trans
-&trans  &kp PRINTSCREEN  &macro_powerrun  &macro_copyq       &macro_listary  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &macro_listary  &macro_copyq  &macro_powerrun  &kp PRINTSCREEN  &trans
-&trans  &kp LA(GRAVE)    &kp LC(COMMA)    &kp LA(BACKSLASH)  &kp LC(T)       &trans                  &trans      &trans                  &trans  &trans          &trans        &trans           &trans           &trans
-&trans  &trans           &trans           &trans             &trans                  &trans  &trans  &trans      &trans  &trans  &trans          &trans          &trans        &trans           &trans           &trans
-            >;
-        };
-
-        layer_UK {
-            bindings = <
-&kp EQUAL  &macro_kvm1  &macro_kvm2  &macro_kvm3  &macro_kvm4  &kp N5  &tog 1                                                                  &mo 6             &kp N6  &kp N7        &kp N8       &kp N9      &kp N0             &kp A
-&kp TAB    &kp Q        &kp W        &kp F        &kp P        &kp B   &trans                                                                  &trans            &kp J   &kp L         &kp U        &kp Y       &kp SINGLE_QUOTE   &kp BSLH
-&kp ESC    &mt LWIN A   &mt LALT R   &mt LCTRL S  &mt LSHFT T  &kp G   &trans        &kp LCTRL   &kp LALT        &kp LGUI       &kp RCTRL      &trans            &kp M   &mt RSHIFT N  &mt RCTRL E  &mt RALT I  &mt RWIN O         &kp SQT
-&kp LSHFT  &lt 7 Z      &kp X        &kp C        &kp D        &kp V                             &kp HOME        &kp PG_UP                                       &kp K   &kp H         &kp COMMA    &kp PERIOD  &kp RA(BACKSLASH)  &kp RSHFT
-&to 3      &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT            &lt 16 SPACE  &lt 17 TAB  &lt 18 ESC      &lt 19 DELETE  &lt 15 RETURN  &lt 20 BACKSPACE          &kp UP        &kp DOWN     &kp LBKT    &kp RBKT           &to 3
-            >;
-        };
-
-        layer_UK_Coding_Layer {
-            bindings = <
-&trans  &trans                &trans             &trans           &trans                 &trans            &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp DOUBLE_QUOTES     &kp SINGLE_QUOTE   &kp AT_SIGN      &kp SEMICOLON          &kp COLON         &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SLASH             &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp LESS_THAN     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp NON_US_BACKSLASH  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans                &trans             &trans           &trans                                   &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_UK_Num_Layer {
-            bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans  &trans                                                 &trans  &trans      &trans        &trans        &trans        &trans        &trans
-&trans  &none         &none         &none             &none           &none   &trans                                                 &trans  &kp PLUS    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans         &trans      &trans  &kp MINUS   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &trans
-&trans  &none         &none         &none             &none           &none                   &trans      &trans                             &kp PERIOD  &kp N1        &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
-&trans  &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &kp BACKSPACE  &kp RETURN  &kp N0              &trans        &trans        &trans        &trans        &trans
-            >;
-        };
-
-        layer_UK_Symbols {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans         &trans     &trans      &trans             &trans         &trans                    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans         &kp GRAVE  &kp AMPS    &kp STAR           &kp HASH       &kp UNDERSCORE            &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans         &kp TILDE  &kp DOLLAR  &kp PRCNT          &kp CARET      &kp PLUS                  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                             &kp PIPE   &kp EXCL    &kp DOUBLE_QUOTES  &kp BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp PIPE2
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &kp RETURN  &kp BACKSPACE             &trans      &trans             &trans         &trans                    &trans
-            >;
-        };
-
-        layer_UK_Funtions {
-            bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans  &trans                                      &trans      &trans           &trans  &trans  &trans  &trans   &trans
-&trans  &none         &none         &none             &none           &none   &trans                                      &trans      &kp PRINTSCREEN  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans  &trans  &trans      &kp SLCK         &kp F4  &kt F5  &kp F6  &kp F11  &trans
-&trans  &none         &none         &none             &none           &none                   &trans      &trans                      &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-&trans  &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &trans  &trans  &kp INSERT                   &trans  &trans  &trans  &trans   &trans
-            >;
-        };
-
-        layer_UK_macros {
-            bindings = <
-&trans  &trans           &trans         &trans                    &trans     &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans           &trans
-&trans  &trans           &trans         &trans                    &trans     &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans           &trans
-&trans  &kp PRINTSCREEN  &powerrun      &copyq                    &listary   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PRINTSCREEN  &trans
-&trans  &kp LA(GRAVE)    &kp LC(COMMA)  &kp LA(NON_US_BACKSLASH)  &kp LC(T)  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans           &trans
-&trans  &trans           &trans         &trans                    &trans             &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans           &trans
-            >;
-        };
-
-        layer_UK_nav {
-            bindings = <
-&trans  &trans         &trans          &trans          &trans           &trans      &trans                                          &trans  &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &kp PG_UP      &kp HOME        &kp UP_ARROW    &kp END          &kp INSERT  &trans                                          &trans  &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &trans     &trans   &trans      &trans  &trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_WIN  &trans
-&trans  &kp LC(Z)      &kp LC(X)       &kp LC(C)       &kp LC(V)        &kp LC(Y)                       &trans      &trans                  &trans  &trans           &trans     &trans         &trans         &trans
-&trans  &trans         &trans          &trans          &trans                       &kp SPACE  &kp TAB  &trans      &trans  &trans  &trans          &trans           &trans     &trans         &trans         &trans
-            >;
-        };
-
-        layer_Mac {
-            bindings = <
-&kp EQUAL  &kvm_1       &kvm_2      &kvm_3          &kvm_4       &kvm_reset  &tog 1                                                                         &mo 6             &kp N6  &kp N7        &kp N8           &kp N9      &kp N0         &kp U
-&kp TAB    &kp Q        &kp W       &kp F           &kp P        &kp B       &to 3                                                                          &to 6             &kp J   &kp L         &kp U            &kp Y       &kp BACKSLASH  &kp BSLH
-&kp ESC    &mt LCTRL A  &mt LALT R  &mt LEFT_WIN S  &mt LSHFT T  &kp G       &to 26        &kp SCROLLLOCK  &kp INS            &kp HOME       &kp END        &to 5             &kp M   &mt RSHIFT N  &mt RIGHT_WIN E  &mt RALT I  &mt RCTRL O    &kp SQT
-&kp LSHFT  &lt 7 Z      &kp X       &kp C           &kp D        &kp V                                     &kp PAGE_DOWN      &kp PG_UP                                       &kp K   &kp H         &kp COMMA        &kp PERIOD  &kp LS(SLASH)  &kp RSHFT
-&tog 3     &kp GRAVE    &kp CAPS    &kp LEFT        &kp RIGHT                &lt 26 SPACE  &lt 27 TAB      &lt 28 ESC         &lt 29 DELETE  &lt 25 RETURN  &lt 22 BACKSPACE          &kp UP        &kp DOWN         &kp LBKT    &kp RBKT       &tog 3
-            >;
-        };
-
-        layer_Mac_Nav_Layer {
-            bindings = <
-&trans  &trans         &trans          &trans          &trans           &trans      &trans                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PG_UP      &kp HOME        &kp UP_ARROW    &kp END          &kp INSERT  &trans                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &trans     &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(Z)      &kp LG(X)       &kp LG(C)       &kp LG(V)        &kp LG(Y)                       &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans          &trans          &trans                       &kp SPACE  &kp TAB  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_Mac_Mouse_Layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_Mac_Button_Layer {
-            bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans     &trans                                      &trans  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans                                      &trans  &kp LC(Y)  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans      &trans  &trans  &trans  &trans     &trans     &trans     &trans     &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)                  &trans      &trans                  &kp LC(Y)  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &trans     &trans     &trans     &trans                &trans  &trans  &trans      &trans  &trans  &trans             &trans     &trans     &trans     &trans     &trans
-            >;
-        };
-
-        layer_Mac_Coding_Layer {
-            bindings = <
-&trans  &trans         &trans             &trans             &trans                 &trans            &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp AT         &kp SINGLE_QUOTE   &kp DOUBLE_QUOTES  &kp SEMICOLON          &kp COLON         &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SLASH      &kp LEFT_BRACKET   &kp LEFT_BRACE     &kp LEFT_PARENTHESIS   &kp LESS_THAN     &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp BACKSLASH  &kp RIGHT_BRACKET  &kp RIGHT_BRACE    &kp RIGHT_PARENTHESIS  &kp GREATER_THAN                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans             &trans             &trans                                   &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_Mac_Num_Layer {
-            bindings = <
-&trans  &trans     &trans        &trans        &trans          &trans  &trans                                                 &trans  &trans      &trans        &trans        &trans        &trans        &trans
-&trans  &none      &none         &none         &none           &none   &trans                                                 &trans  &kp PLUS    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &trans
-&trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans         &trans      &trans  &kp MINUS   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH     &trans
-&trans  &none      &none         &none         &none           &none                   &trans      &trans                             &kp PERIOD  &kp N1        &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &trans
-&trans  &trans     &trans        &trans        &trans                  &trans  &trans  &trans      &kp BACKSPACE  &kp RETURN  &kp N0              &trans        &trans        &trans        &trans        &trans
-            >;
-        };
-
-        layer_Mac_Symbols {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans         &trans     &trans      &trans     &trans            &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans         &kp GRAVE  &kp AMPS    &kp STAR   &kp POUND         &kp LS(MINUS)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans         &kp COLON  &kp DOLLAR  &kp PRCNT  &kp CARET         &kp PLUS       &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                             &kp TILDE  &kp EXCL    &kp AT     &kp RA(NUMBER_3)  &kp PIPE       &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &kp RETURN  &kp BACKSPACE             &trans      &trans     &trans            &trans         &trans
-            >;
-        };
-
-        layer_Mac_Funtions {
-            bindings = <
-&trans  &trans     &trans        &trans        &trans          &trans  &trans                                              &trans           &trans           &trans  &trans  &trans  &trans   &trans
-&trans  &none      &none         &none         &none           &none   &trans                                              &trans           &kp PRINTSCREEN  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-&trans  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_WIN  &kp LEFT_SHIFT  &none   &trans  &trans  &trans      &trans  &trans          &trans           &kp SLCK         &kp F4  &kt F5  &kp F6  &kp F11  &trans
-&trans  &none      &none         &none         &none           &none                   &trans      &trans                                   &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-&trans  &trans     &trans        &trans        &trans                  &trans  &trans  &trans      &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE                   &trans  &trans  &trans  &trans   &trans
-            >;
-        };
-
-        layer_Mac_macros {
-            bindings = <
-&trans  &trans           &trans         &trans             &trans                     &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans         &trans             &trans                     &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PRINTSCREEN  &kp LG(SPACE)  &kp LG(LA(C))      &kp LA(LS(LC(LG(SPACE))))  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(GRAVE)    &kp LC(COMMA)  &kp LA(BACKSLASH)  &kp LG(T)                  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans         &trans             &trans                             &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2    &bt BT_SEL 3 &trans                                 &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &bootloader                                 &bootloader &trans &trans &trans &trans &trans &trans
+&trans  &trans        &trans        &trans            &trans          &trans  &trans  &trans  &bt BT_CLR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans            &trans          &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&to 0   &trans        &trans        &trans            &trans                  &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &to 0
             >;
         };
     };
