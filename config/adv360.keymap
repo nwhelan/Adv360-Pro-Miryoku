@@ -33,7 +33,7 @@
             bindings = <
 &trans  &trans      &trans      &trans       &trans       &trans  &trans                                                    &trans           &trans  &trans       &trans       &trans      &trans         &trans
 &trans  &kp Q       &kp W       &kp E        &kp R        &kp T   &trans                                                    &trans           &kp Y   &kp U        &kp I        &kp O       &kp P          &trans
-&trans  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G   &trans       &lt 3 ESC  &trans      &trans  &lt 6 DEL     &trans           &kp H   &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI APOS  &trans
+&trans  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G   &trans       &lt 3 ESC  &trans      &trans  &lt 6 DEL     &trans           &kp H   &hm RSHFT J  &hm LCTRL K  &hm RALT L  &hm RGUI APOS  &trans
 &trans  &kp Z       &kp X       &kp C        &kp V        &kp B                           &trans      &trans                                 &kp N   &kp M        &kp COMMA    &kp PERIOD  &kp FSLH       &trans
 &to 7   &trans      &trans      &trans       &trans               &lt 1 SPACE  &lt 2 TAB  &trans      &trans  &lt 5 RETURN  &lt 4 BACKSPACE          &trans       &trans       &trans      &trans         &to 7
             >;
