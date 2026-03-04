@@ -104,3 +104,39 @@ label = "macro_kinesis";
 #binding-cells = <0>;
 bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
 };
+macro_fat_arrow: macro_fat_arrow {
+compatible = "zmk,behavior-macro";
+label = "macro_fat_arrow";
+#binding-cells = <0>;
+bindings = <&kp SPACE>, <&kp EQUAL>, <&kp LS(DOT)>, <&kp SPACE>;
+};
+macro_not_equal: macro_not_equal {
+compatible = "zmk,behavior-macro";
+label = "macro_not_equal";
+#binding-cells = <0>;
+bindings = <&kp LS(N1)>, <&kp EQUAL>, <&kp EQUAL>;
+};
+macro_todo_comment: macro_todo_comment {
+compatible = "zmk,behavior-macro";
+label = "macro_todo_comment";
+#binding-cells = <0>;
+bindings = <&kp FSLH>, <&kp FSLH>, <&kp SPACE>, <&kp LS(T)>, <&kp LS(O)>, <&kp LS(D)>, <&kp LS(O)>, <&kp LS(SEMI)>, <&kp SPACE>;
+};
+macro_console_log: macro_console_log {
+compatible = "zmk,behavior-macro";
+label = "macro_console_log";
+#binding-cells = <0>;
+bindings = <&kp C>, <&kp O>, <&kp N>, <&kp S>, <&kp O>, <&kp L>, <&kp E>, <&kp DOT>, <&kp L>, <&kp O>, <&kp G>, <&kp LS(N9)>, <&kp LS(N0)>, <&kp LEFT>;
+};
+macro_triple_tick: macro_triple_tick {
+compatible = "zmk,behavior-macro";
+label = "macro_triple_tick";
+#binding-cells = <0>;
+bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+};
+macro_git_commit: macro_git_commit {
+compatible = "zmk,behavior-macro";
+label = "macro_git_commit";
+#binding-cells = <0>;
+bindings = <&kp G>, <&kp I>, <&kp T>, <&kp SPACE>, <&kp C>, <&kp O>, <&kp M>, <&kp M>, <&kp I>, <&kp T>, <&kp SPACE>, <&kp MINUS>, <&kp M>, <&kp SPACE>, <&kp LS(SQT)>, <&kp LS(SQT)>, <&kp LEFT>;
+};
